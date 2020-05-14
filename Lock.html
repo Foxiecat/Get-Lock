@@ -36,11 +36,11 @@
 
         function openLock()
         {
-            if (code == correctCode == code.length == 4) {
+            if (code == correctCode && code.length == 4) {
                 document.getElementById('numberBox').innerHTML = 'You managed to open the lock!';
             }
 
-            else if (code != correctCode | code.length >= 4)
+            else if (code != correctCode | code.length > 4)
             {
                 document.getElementById('numberBox').innerHTML = 'You are dead wrong';
             }
