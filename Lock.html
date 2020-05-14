@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <h1 id="riktigKode"></h1>
+    <button onclick="number(this)">0</button>
+    <button onclick="number(this)">1</button>
+    <button onclick="number(this)">2</button>
+    <button onclick="number(this)">3</button>
+    <button onclick="number(this)">4</button>
+    <button onclick="number(this)">5</button>
+    <button onclick="number(this)">6</button>
+    <button onclick="number(this)">7</button>
+    <button onclick="number(this)">8</button>
+    <button onclick="number(this)">9</button>
+    <button onclick="openLock(this)">Open</button>
+
+    <div id="numberBox"></div>
+
+    <script>
+
+        var code = '';
+        var correctCode = document.getElementById('riktigKode').innerHTML = Math.floor(Math.random(Math.length == 4) * 8999) + 1000;
+
+        function number(tall)
+        {
+            document.getElementById('numberBox').innerHTML += tall.innerHTML;
+            code += tall.innerHTML;
+            
+        }
+
+        function openLock()
+        {
+            if (code == correctCode == code.length == 4) {
+                document.getElementById('numberBox').innerHTML = 'You managed to open the lock!';
+            }
+
+            else if (code != correctCode | code.length >= 4)
+            {
+                document.getElementById('numberBox').innerHTML = 'You are dead wrong';
+            }
+
+        }
+    </script>
+
+</body>
+</html>
