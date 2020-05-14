@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <h1 id="riktigKode"></h1>
+
     <button onclick="number(this)">0</button>
     <button onclick="number(this)">1</button>
     <button onclick="number(this)">2</button>
@@ -21,31 +21,30 @@
     <button onclick="openLock(this)">Open</button>
 
     <div id="numberBox"></div>
+    <h1 id="riktigKode"></h1>
 
     <script>
 
         var code = '';
         var correctCode = document.getElementById('riktigKode').innerHTML = Math.floor(Math.random(Math.length == 4) * 8999) + 1000;
 
-        function number(tall)
-        {
+        function number(tall) {
             document.getElementById('numberBox').innerHTML += tall.innerHTML;
             code += tall.innerHTML;
-            
+
         }
 
-        function openLock()
-        {
+        function openLock() {
             if (code == correctCode && code.length == 4) {
                 document.getElementById('numberBox').innerHTML = 'You managed to open the lock!';
             }
 
-            else if (code != correctCode | code.length > 4)
-            {
+            else if (code != correctCode | code.length > 4) {
                 document.getElementById('numberBox').innerHTML = 'You are dead wrong';
             }
 
         }
+        
     </script>
 
 </body>
